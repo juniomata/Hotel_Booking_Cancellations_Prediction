@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <link rel="icon" href="./static/logo_.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="scripts.js">
+  </script>
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Bell-Man Dataset</title>
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+thead /* Normal text */
+{
+ font-style: bold;
+ font-weight: bold;
+ color: #000000;
+ text-decoration: none;
+ text-align: center;
+}
+tbody /* Normal text */
+{
+ font-size: 10pt;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+ text-align: center;
+}
+span.rvts1 /* Heading */
+{
+ font-family: 'Calibri';
+ font-weight: bold;
+ color: #030307;
+ text-align: center;
+}
+span.rvts2 /* Subheading */
+{
+ font-family: 'Calibri';
+ font-weight: bold;
+ color: #060614;
+ text-align: center;
+}
+span.rvts3 /* Keywords */
+{
+ font-family: 'Calibri';
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ font-family: 'Calibri';
+ color: #008000;
+ text-decoration: underline;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      font-size: 50px
+    }
+.navbar-light .navbar-nav .nav-link {
+  color: #403530;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  font-weight: bold;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+</style>
+</head>
+
+<body>
+<!-- Semantic elements -->
+    <!-- https://www.w3schools.com/html/html5_semantic_elements.asp -->
+
+    <!-- Bootstrap navbar example -->
+    <!-- https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+    <div class="container">
+      <nav class="row navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="#">
+          <img src="./static/logo_.png" alt="" style="height:30px;"/>
+        </a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navb"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navb">
+          <ul class="navbar-nav ml-auto mr-3">
+            <li class="nav-item mx-md-2">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item mx-md-2">
+              <a class="nav-link active" href="/database">Dataset</a>
+            </li>
+            <li class="nav-item mx-md-2">
+              <a class="nav-link" href="/visualize">Visualization</a>
+            </li>
+            <li class="nav-item mx-md-2">
+              <a class="nav-link" href="/predict">Prediction</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+    </div>
+</body>
+
+<body style="background-image: url({{url_for('static',filename='wallpaper.jpg') }});background-size:contain;">
+  <div class="container-fluid">
+      <center><br>
+            <h2 class="display-4" >
+                Hotel Demand Dataset                
+            </h2><br><br>
+</body>
+
+<body>
+
+  <table class="table table-bordered table-hover table-condensed">
+    <thead>
+        {% for i in dataArray[0] %}
+        <td style="border:2px solid #b3a29a">
+         {{i}}
+        </td>
+        {% endfor %}  
+      </thead>
+      <tbody>
+        {% for x in range(1,row) %}
+        <tr>
+          {% for y in range(0,col) %}
+          <td style="border:2px solid #b3a29a">
+            {{dataArray[x][y]}}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}  
+      </tbody>
+    </table>  
+
+<br>
+
+
+<!--JavaScript at end of body for optimized loading-->
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+</html>
