@@ -69,27 +69,27 @@ Using Pipeline: constant imputer and binary encoder for categorical data, robust
 
 #### 2. Modeling with Default Parameters
 Six models are used: Logistic Regression, DTC, RFC, Gradient Boosting Classifier, XGB Classifier, KNN. The two best models are __RFC and XGB__
-![pic1](./6ModelScore.jpg)
+![pic1](./pic_for_readme/6ModelScore.jpg)
 
 #### 3. Modeling with Default Parameters + RFE in Pipeline
 The test score using RFE is slightly drop from the non-RFE model and RFC model still has the best score
-![pic2](./no_rfe_vs_rfe.jpg)
+![pic2](./pic_for_readme/no_rfe_vs_rfe.jpg)
 
 #### 4. Hyperparameter Tuning RFC
 The tuning is failed to make the score better. So, the default parameter RFC model pipeline will be used
-![pic3](./tuning.jpg)
+![pic3](./pic_for_readme/tuning.jpg)
 
 #### 5. Threshold Adjustment
 The threshold of 0.590833 increase precision score as much as almost 4% while losing recall score 5.7%
-![pic4](./threshold_adjust.jpg)
+![pic4](./pic_for_readme/threshold_adjust.jpg)
 
 ## Dashboard
 #### Homepage
-![pic5](./homepage.png)
+![pic5](./pic_for_readme/homepage.png)
 #### Dataset Page
-![pic6](./pagedataset.jpg)
+![pic6](./pic_for_readme/pagedataset.jpg)
 #### Visualization Page
-![pic7](./pagevis.jpg)
+![pic7](./pic_for_readme/pagevis.jpg)
 #### Predict and Result
-![pic8](./pagepredict.jpg)
-![pic9](./pageresult.jpg)
+![pic8](./pic_for_readme/pagepredict.jpg)
+![pic9](./pic_for_readme/pageresult.jpg)
