@@ -53,7 +53,43 @@ The data is originally from the article Hotel Booking Demand Datasets, written b
 
 
 ## Data Preparation
+#### 1. Drop Rows with Missing Values
+children, country, market_segment, distribution_channel 
+#### 2. Modifying Columns
+total_guests = adults + children + babies
+#### 3. Remove Wrong Values
+- adr feature has negative value. It does not make sense if the price is negative. 
+- total_guests has the value of 0. It does not make sense if no one booked the room.
+#### 4. Drop Features
+Considering: percentage of null values,  information contained, high correlation with other features
 
 ## Modeling
+#### 1. Preprocessing
+Using Pipeline: constant imputer and binary encoder for categorical data, robust scaler for numerical data, smote
+
+#### 2. Modeling with Default Parameters
+Six models are used: Logistic Regression, DTC, RFC, Gradient Boosting Classifier, XGB Classifier, KNN. The two best models are __RFC and XGB__
+![pic1](./6ModelScore.jpg)
+
+#### 3. Modeling with Default Parameters + RFE in Pipeline
+The test score using RFE is slightly drop from the non-RFE model and RFC model still has the best score
+![pic2](./no_rfe_vs_rfe.jpg)
+
+#### 4. Hyperparameter Tuning RFC
+The tuning is failed to make the score better. So, the default parameter RFC model pipeline will be used
+![pic3](./tuning.jpg)
+
+#### 5. Threshold Adjustment
+The threshold of 0.590833 increase precision score as much as almost 4% while losing recall score 5.7%
+![pic4](./threshold_adjust.jpg)
 
 ## Dashboard
+#### Homepage
+![pic5](./homepage.png)
+#### Dataset Page
+![pic6](./pagedataset.jpg)
+#### Visualization Page
+![pic7](./pagevis.jpg)
+#### Predict and Result
+![pic8](./pagepredict.jpg)
+![pic9](./pageresult.jpg)
