@@ -72,7 +72,7 @@ Six models are used: Logistic Regression, DTC, RFC, Gradient Boosting Classifier
 ![pic1](./pic_for_readme/6ModelScore.jpg)
 
 #### 3. Modeling with Default Parameters + RFE in Pipeline
-The test score using RFE is slightly drop from the non-RFE model and RFC model still has the best score
+The test score using RFE is slightly drop from the non-RFE model and RFC model still has the best score<br>
 ![pic2](./pic_for_readme/no_rfe_vs_rfe.jpg)
 
 #### 4. Hyperparameter Tuning RFC
