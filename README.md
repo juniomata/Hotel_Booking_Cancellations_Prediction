@@ -91,5 +91,5 @@ The threshold of 0.590833 increase precision score as much as almost 4% while lo
 #### Visualization Page
 ![pic7](./pic_for_readme/pagevis_.JPG)
 #### Predict and Result
-![pic8](./pic_for_readme/pagepredict_.JPG)
+![pic8](./pic_for_readme/pagepredict_.jpg)
 ![pic9](./pic_for_readme/pageresult_.JPG)
