@@ -13,7 +13,7 @@ The data is originally from the article Hotel Booking Demand Datasets, written b
 
 <img src="https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/jleQRg3N-1380x690.jpeg" alt="Hotel Lobby" style="width:690px;height:345px;">
 
-<br>
+
 ## Data Dictionary
 |VARIABLE                       |TYPE      |DESCRIPTION |
 |:------------------------------|:---------|:-----------|
@@ -63,7 +63,7 @@ total_guests = adults + children + babies
 #### 4. Drop Features
 Considering: percentage of null values,  information contained, high correlation with other features
 
-<br>
+
 ## Modeling
 #### 1. Preprocessing
 Using Pipeline: constant imputer and binary encoder for categorical data, robust scaler for numerical data, smote
@@ -84,7 +84,7 @@ The tuning is failed to make the score better. So, the default parameter RFC mod
 The threshold of 0.590833 increase precision score as much as almost 4% while losing recall score 5.7%
 ![pic4](./pic_for_readme/threshold_adjust.jpg)
 
-<br>
+
 ## Dashboard
 #### Homepage
 ![pic5](./pic_for_readme/homepage.jpg)
