@@ -51,7 +51,6 @@ The data is originally from the article Hotel Booking Demand Datasets, written b
 |__reservation_status_date__    |double    | Date at which the last status was set. This variable can be used in conjunction with the ReservationStatus to understand when was the booking canceled or when did the customer checked-out of the hotel|
 
 
-<br>
 ## Data Preparation
 #### 1. Drop Rows with Missing Values
 children, country, market_segment, distribution_channel 
