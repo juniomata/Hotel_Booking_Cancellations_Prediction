@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <link rel="icon" href="./static/logo_.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="scripts.js">
+	</script>
+	<link rel="stylesheet" href="styles.css">
+    <title>Result</title>
+
+    <style>
+        .navbar-light .navbar-nav .nav-link {
+          color: #403530;
+        }
+    
+        .navbar-light .navbar-nav .nav-link.active {
+          font-weight: bold;
+        }
+        .btn {
+            background-color: #EAD6C5; /* Green */
+            border: none;
+            color: #403530;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #b3a29a;
+            color: #fff;
+        }
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            color: #403530;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="row navbar navbar-expand-lg navbar-light bg-white">
+          <a class="navbar-brand" href="#">
+            <img src="./static/logo_.png" alt="" style="height:30px;"/>
+          </a>
+          <button
+            class="navbar-toggler navbar-toggler-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navb"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- Menu -->
+          <div class="collapse navbar-collapse" id="navb">
+            <ul class="navbar-nav ml-auto mr-3">
+              <li class="nav-item mx-md-2">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item mx-md-2">
+                <a class="nav-link" href="/database">Dataset</a>
+              </li>
+              <li class="nav-item mx-md-2">
+                <a class="nav-link" href="/visualize">Visualization</a>
+              </li>
+              <li class="nav-item mx-md-2">
+                <a class="nav-link active" href="/predict">Prediction</a>
+              </li>
+            </ul>
+  
+          </div>
+        </nav>
+      </div>
+</body>
+
+<body style="background-image: url({{url_for('static',filename='vis_bg.jpg') }}); background-repeat: no-repeat; background-size:cover;">
+
+    <!-- HEADING -->
+    <!-- <center><br>
+        <img src="../static/logo.png" width="8%" ><br><br>
+        <h2 class="display-4"><strong>Prediction</strong> <span class="badge badge-secondary">Result</span></h2>
+        <br>
+        <h3>Alcohol Level: {{data['Alcohol']}}</h3>
+        <h3>Density Level: {{data['Density']}}</h3>
+        <h3>Fixed Acidity Level: {{data['Acidity']}}</h3>
+        <h3>Chlorides Level: {{data['Chlorides']}}</h3>
+    </center> -->
+
+    <!-- RESULT -->
+    <center><br>
+        <!-- <img src="../static/congrats.png" width="80%" ><br><br> -->
+        <!-- <h3 class="display-4"><strong>Your Wine Quality is</strong> <span class="badge badge-secondary">{{ pred }}</span></h3> -->
+        <br><br><br>
+        <h3 class="display-4"><span class="badge badge-secondary">{{ pred }}</span></h3>
+       <br>
+    </center>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+</html>

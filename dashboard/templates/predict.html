@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <link rel="icon" href="./static/logo_.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="scripts.js">
+	  </script>
+	  <link rel="stylesheet" href="styles.css">
+    <title>Bell-Man Predict</title>
+
+    <style>
+        .navbar-light .navbar-nav .nav-link {
+          color: #403530;
+        }
+    
+        .navbar-light .navbar-nav .nav-link.active {
+          font-weight: bold;
+        }
+        .btn {
+            background-color: #EAD6C5; /* Green */
+            border: none;
+            color: #403530;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #b3a29a;
+            color: #fff;
+        }
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            color: #403530;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="row navbar navbar-expand-lg navbar-light bg-white">
+          <a class="navbar-brand" href="#">
+            <img src="./static/logo_.png" alt="" style="height:30px;"/>
+          </a>
+          <button
+            class="navbar-toggler navbar-toggler-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navb"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- Menu -->
+          <div class="collapse navbar-collapse" id="navb">
+            <ul class="navbar-nav ml-auto mr-3">
+              <li class="nav-item mx-md-2">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item mx-md-2">
+                <a class="nav-link" href="/database">Dataset</a>
+              </li>
+              <li class="nav-item mx-md-2">
+                <a class="nav-link" href="/visualize">Visualization</a>
+              </li>
+              <li class="nav-item mx-md-2">
+                <a class="nav-link active" href="/predict">Prediction</a>
+              </li>
+            </ul>
+  
+          </div>
+        </nav>
+      </div>
+</body>
+
+
+
+<body style="background-image: url({{url_for('static',filename='buildings.jpg')}}); background-repeat: no-repeat; background-size:cover;">
+
+    <center><br>
+        <img src="../static/logo_.png" width="8%" ><br><br>
+    </center>
+
+    <div class="container pt 5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-3">
+                <center><h3>Prediction</h3></center>
+                <!-- method POST mengubah menjadi list 2 dimensi -->
+                <form method="POST" action = "http://127.0.0.1:5000/result">
+                    <!-- Hotel -->
+                    <select id="hotel" name="hotel" placeholder="Hotel Type"required="required" class="custom-select custom-select-lg" style="height: 35px; font-size:14px;">
+                        <option value="Resort Hotel">Resort Hotel</option>
+                        <option value="City Hotel">City Hotel</option>
+                    </select> 
+                    <!-- Lead Time -->
+                    <input type="number" name="lead_time" max="737" min="0" placeholder="Lead Time (0 - 737)" class="form-control form-control-sm mt-2" style="height: 35;">
+                    <!-- Arrival Date Month -->
+                    <select id="country" name="arrival_date_month" placeholder="Month" required="required" class="custom-select custom-select-lg" style="height: 35px; font-size:14px;">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <!-- Arrival Date Day of Month -->
+                    <input type="number" name="arrival_date_day_of_month" max="31" min="1" placeholder="Arrival Date (1-31)" class="form-control form-control-sm mt-2" style="height: 35;">
+                    <!-- Stay in Weekend Nights -->
+                    <input type="number" name="stays_in_weekend_nights" max="191" min="0" placeholder="Nights spent in weekend (0-191)" class="form-control form-control-sm mt-2" style="height: 35;">       
+                    <!-- Stay in Weekdays Nights -->
+                    <input type="number" name="stays_in_week_nights" max="50" min="0" placeholder="Nights spent in weekday (0-50)" class="form-control form-control-sm mt-2" style="height: 35;"> 
+                    <!-- Meal -->
+                    <select id="meal" name="meal" placeholder="Meal" required="required" class="custom-select custom-select-lg" style="height: 35px; font-size:14px;">
+                        <option value="BB">BB</option>
+                        <option value="FB">FB</option>
+                        <option value="HB">HB</option>
+                        <option value="SC">SC</option>
+                        <option value="Undefined">Undefined</option>
+                    </select>
+                    <!-- Distribution Channel -->
+                    <select id="distribution_channel" name="distribution_channel" placeholder="Booking Channel" required="required" class="custom-select custom-select-lg" style="height: 35px; font-size:14px;">
+                        <option value="Direct">Direct</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="TA/TO">TA/TO</option>
+                        <option value="Undefined">Undefined</option>
+                        <option value="GDS">GDS</option>
+                    </select>
+                    <!-- Repeated Guest -->
+                    <input type="number" name="is_repeated_guest" max="1" min="0" placeholder="Repeated Guest? (Yes (1) / No (0))" class="form-control form-control-sm mt-2" style="height: 35 px;"> 
+                    <!-- Prev cancellation -->
+                    <input type="number" name="previous_cancellations" max="26" min="0" placeholder="Number of previous cancellation (0-26)" class="form-control form-control-sm mt-2" style="height: 35px;"> 
+                    <!-- Prev bookings not cancel -->
+                    <input type="number" name="previous_bookings_not_canceled" max="72" min="0" placeholder="Number of bookings not cancelled (0-72)" class="form-control form-control-sm mt-2" style="height: 35 px;"> 
+                    <!-- Room Type -->
+                    <select id="assigned_room_type" name="assigned_room_type" required="required" class="custom-select custom-select-lg" placeholder= "Room Type" style="height: 35px; font-size:14px;">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="K">K</option>
+                        <option value="L">L</option>
+                        <option value="P">P</option>
+                    </select>
+                    <!-- Booking changes -->
+                    <input type="number" name="booking_changes" max="21" min="0" placeholder="Number of changes made" class="form-control form-control-sm mt-2" style="height: 35px;"> 
+                    <!-- Agent -->
+                    <input type="number" name="agent" max="535" min="1" placeholder="Code of Agent (1-535)" class="form-control form-control-sm mt-2" style="height:35px;"> 
+                    <!-- Waiting list -->
+                    <input type="number" name="days_in_waiting_list" max="391" min="0" placeholder="Days in waiting list (0-391)" class="form-control form-control-sm mt-2" style="height:35px;"> 
+                    <!-- Customer Type -->
+                    <select id="assigned_room_type" name="customer_type" required="required" class="custom-select custom-select-lg" placeholder= "Customer Type" style="height: 35px; font-size:14px;">
+                        <option value="Transient">Transient</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Transient-Party">Transient-Party</option>
+                        <option value="Group">Group</option>
+                    </select>
+                    <!-- Price -->
+                    <input type="number" name="adr" max="5400" min="0" placeholder="Price in EUR (0 to 5400)" step="0.1" class="form-control form-control-sm mt-2" style="height:35px;">
+                    <!-- Car parking -->
+                    <input type="number" name="required_car_parking_spaces" max="9" min="0" placeholder="Required Car Parking Spaces (0 to 9)" class="form-control form-control-sm mt-2" style="height:35px;">
+                    <!-- Special requests -->
+                    <input type="number" name="total_of_special_requests" max="5" min="0" placeholder="Total of Special Requests (0 to 5)" class="form-control form-control-sm mt-2" style="height:35px;">
+                   <!-- Total guests -->
+                   <input type="number" name="total_guests" max="55" min="0" placeholder="Total Guests (0 to 55)" class="form-control form-control-sm mt-2" style="height: 35px;">
+                     <!-- Country -->
+                     <select id="countries" name="countries" placeholder="Country" required="required" class="custom-select custom-select-lg" style="height: 35px; font-size:14px;">
+                        <option value="PRT">PRT</option>
+                        <option value="GBR">GBR</option>
+                        <option value="USA">USA</option>
+                        <option value="ESP">ESP</option>
+                        <option value="IRL">IRL</option>
+                        <option value="FRA">FRA</option>
+                        <option value="Other">Other</option>
+                        <option value="DEU">DEU</option>
+                        <option value="BEL">BEL</option>
+                        <option value="CHE">CHE</option>
+                        <option value="CN">CN</option>
+                        <option value="ITA">ITA</option>
+                        <option value="NLD">NLD</option>
+                        <option value="SWE">SWE</option>
+                        <option value="BRA">BRA</option>
+                        <option value="AUT">AUT</option>
+                    </select>
+                    
+                    <center>
+                    <button type="submit" class="btn btn mt-4" href="/result">
+                        Predict
+                    </button>
+                    </center><br>
+                    
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!--JavaScript at end of body for optimized loading-->
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+</html>
